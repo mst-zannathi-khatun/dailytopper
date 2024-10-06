@@ -1,7 +1,11 @@
+import 'package:dailytopper/ui/screens/components/homescreen/postsourcesection.dart';
 import 'package:flutter/material.dart';
 import '../widgets/background_image_widget.dart';
 import '../widgets/daily_topper_button_widget.dart';
 import '../widgets/update_title_text_widget.dart';
+import 'components/homescreen/featurednewsbanner.dart';
+import 'components/homescreen/postauthorsection.dart';
+import 'components/homescreen/postcontentsection.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,10 +13,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
-            const Stack(
+            Stack(
               clipBehavior: Clip.none,
               children: [
                 BackgroundImageWidget(),
@@ -21,96 +25,17 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  const SizedBox(height: 22),
-                  const Row(
-                    children: [
-                      Text(
-                        "Posted by ",
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
-                      ),
-                      Text(
-                        "Zannathi",
-                        style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        " at July 23 2024 09:00 PM",
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 3),
-                  const Text(
-                    "While education levels vary from country to country, there is a clear correlation between the "
-                        "quality of a country's educational system and its general economic status and overall well-being. "
-                        "In general, developing nations tend to offer their citizens a higher quality of education than the "
-                        "least developed nations do, and fully developed nations offer the best quality of education of all. "
-                        "Education is clearly a vital contributor to any country's overall health.",
-                    textAlign: TextAlign.justify,
-                  ),
-                  const SizedBox(height: 85,),
-                  Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.network(
-                          'https://tse1.mm.bing.net/th?id=OIP.9SdnEpFfwSARkH8G80MttQHaE8&pid=Api&P=0&h=220',
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                          height: 80,
-                        ),
-                      ),
-                      Positioned(
-                        left: 10,
-                        top: 20,
-                        child: Row(
-                          children: [
-                            const SizedBox(width: 8),
-                            const Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Paris Olympiad 2024",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22,
-                                    height: 1.5,
-                                  ),
-                                ),
-                                Text(
-                                  "Related News",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    height: 1,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(
-                              width: 94,
-                            ),
-                            Container(
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.white30,
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Icon(
-                                  Icons.arrow_forward_ios_outlined,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  SizedBox(height: 22),
+                  PostAuthorSection(),
+                  SizedBox(height: 3),
+                  PostContentSection(),
+                  SizedBox(height: 4,),
+                  PostSourceSection(),
+                  SizedBox(height: 85,),
+                  FeaturedNewsBanner(),
                 ],
               ),
             ),

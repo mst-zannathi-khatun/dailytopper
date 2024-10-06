@@ -5,11 +5,17 @@ class BackgroundImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      "assets/images/student.jpg",
-      height: 400,
-      width: double.infinity,
-      fit: BoxFit.cover,
+    return ClipRRect(
+      borderRadius: BorderRadius.only(
+        bottomRight: Radius.elliptical(-12, -12),
+        bottomLeft: Radius.elliptical(-12, -12),
+      ),
+      child: Image.asset(
+        "assets/images/student.jpg",
+        height: 400,
+        width: double.infinity,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
