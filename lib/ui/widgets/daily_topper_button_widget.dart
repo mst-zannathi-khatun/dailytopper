@@ -9,7 +9,7 @@ class DailyTopperButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Positioned(
       bottom: -20, // This will allow the button to sit half on the image
-      left: 200,
+      left: 250,
       right: 4,
       child: ElevatedButton(
         onPressed: () {},
