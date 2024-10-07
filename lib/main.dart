@@ -1,4 +1,4 @@
-import 'package:dailytopper/ui/screens/homescreen.dart';
+import 'package:dailytopper/ui/screens/bottom_navigationbar.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -11,7 +11,7 @@ class DailyTopperApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeScreen(),
+      home: BottomNavigationBarScreen(),
     );
   }
 }
